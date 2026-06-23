@@ -818,15 +818,28 @@
   .nav-dropdown.aberto .dropdown-menu { display: block; }
 
   /* Slider no celular */
-  .slide-conteudo { padding: 0 1rem 80px; }
-  .slide-conteudo h1 { font-size: 22px; }
-  .slide-botoes { flex-direction: column; }
-  .slide-botoes .btn { text-align: center; justify-content: center; }
+  .slide-conteudo { padding: 0 1.25rem 90px; }
+  .slide-conteudo h1 { font-size: 20px; line-height: 1.3; }
+  .slide-conteudo p  { font-size: 13px; margin-bottom: 1rem; }
+  .slide-tag { font-size: 10px; padding: 4px 10px; }
+  .slide-botoes .btn:last-child { display: none; } /* esconde o 2º botão */
+  .slide-botoes .btn { width: 100%; justify-content: center; padding: 11px; font-size: 14px; }
 
   /* Stats do slider em 2 colunas */
   .slider-stats { grid-template-columns: repeat(2, 1fr); }
   .slider-stat:nth-child(2) { border-right: none; }
 
   /* WhatsApp flutuante menor */
-  .wpp-flutuante { width: 48px; height: 48px; font-size: 24px; bottom: 16px; right: 16px; }
+  .wpp-flutuante { width: 48px; height: 48px; font-size: 24px; bottom: 20px; right: 16px; }
+
+  /* Sobre — mais respiro lateral */
+  .sobre-secao .secao { padding: 2rem 1.25rem; }
+  .sobre-grid { gap: 1.5rem; }
+  .sobre-texto h2 { font-size: 24px; }
+  .sobre-texto p  { font-size: 13px; }
+
+  /* Seções gerais */
+  .secao { padding: 2rem 1.25rem; }
+  .secao-header h2 { font-size: 20px; }
+  .secao-header p  { font-size: 13px; }
 }
