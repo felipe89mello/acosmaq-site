@@ -20,10 +20,15 @@ if (btnHamburguer) {
   });
 }
 
-/* Fecha o menu ao clicar em um link */
+/* Fecha o menu ao clicar em um link — mas não quando for o dropdown */
 document.querySelectorAll('.nav-links a').forEach(function (link) {
   link.addEventListener('click', function () {
-    navLinks.classList.remove('aberto');
+    /* Se o link pai for um dropdown, não fecha o menu */
+    const ehDropdown = this.closest('.nav-dropdown') &&
+                       this.parentElement.classList.contains('nav-dropdown');
+    if (!ehDropdown) {
+      navLinks.classList.remove('aberto');
+    }
   });
 });
 
