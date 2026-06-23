@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Orçamento — Aços Maq</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/orcamento.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="imagens/logo.png" alt="Aços Maq" class="nav-logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="orcamento.html" class="ativo">Orçamento</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <a href="orcamento.html" class="btn btn-primario">Solicitar orçamento</a>
+  </nav>
+
+
+  <!--
+    =============================================
+    SEÇÃO DE ORÇAMENTO
+    =============================================
+    Layout de duas colunas:
+    - Esquerda: informações de contato
+    - Direita: formulário
+  -->
+  <section class="secao orcamento-secao">
+
+    <div class="secao-header">
+      <span class="secao-tag">Orçamento</span>
+      <h1>Solicite seu orçamento</h1>
+      <p>Retornamos em até 24 horas com proposta completa</p>
+    </div>
+
+    <div class="orcamento-container">
+
+      <!-- COLUNA ESQUERDA: Contato -->
+      <div class="orcamento-info">
+        <h2>Fale com nossa equipe</h2>
+        <p>
+          Descreva o material ou equipamento que você precisa
+          e nossa equipe técnica prepara uma proposta personalizada.
+        </p>
+
+        <!-- Informações de contato -->
+        <div class="contato-lista">
+          <div class="contato-item">
+            <i class="ti ti-phone"></i>
+            <div>
+              <strong>Telefone / WhatsApp</strong>
+              <a href="https://wa.me/5519998934893" target="_blank">(19) 99893-4893</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <i class="ti ti-mail"></i>
+            <div>
+              <strong>Vendas</strong>
+              <a href="mailto:vendasmaq@acosmaqconchal.com.br">vendasmaq@acosmaqconchal.com.br</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <i class="ti ti-mail"></i>
+            <div>
+              <strong>Comercial</strong>
+              <a href="mailto:comercial@acosmaqconchal.com.br">comercial@acosmaqconchal.com.br</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <i class="ti ti-map-pin"></i>
+            <div>
+              <strong>Localização</strong>
+              <span>Conchal, SP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aviso de tempo de resposta -->
+        <div class="aviso-resposta">
+          <div class="aviso-titulo">
+            <i class="ti ti-clock"></i>
+            Resposta rápida
+          </div>
+          <p>
+            Orçamentos respondidos em até 24h úteis.
+            Para urgências, entre em contato pelo WhatsApp.
+          </p>
+        </div>
+
+        <!-- Botão direto para WhatsApp -->
+        <a
+          href="https://wa.me/5519998934893?text=Olá! Gostaria de solicitar um orçamento."
+          target="_blank"
+          class="btn-whatsapp"
+        >
+          <i class="ti ti-brand-whatsapp"></i>
+          Chamar no WhatsApp
+        </a>
+      </div>
+
+
+      <!-- COLUNA DIREITA: Formulário -->
+      <div class="orcamento-form-wrap">
+        <!--
+          FORMULÁRIO DE ORÇAMENTO
+          =============================================
+          O atributo "action" define para onde os dados são enviados.
+          Para usar de verdade, você precisará de um backend
+          (ex: PHP, Node.js) ou serviço como Formspree/EmailJS.
+
+          O JavaScript em orcamento.js cuida da validação.
+        -->
+        <form class="orcamento-form" id="orcamento-form" action="#" method="POST" novalidate>
+
+          <!-- Linha com dois campos lado a lado -->
+          <div class="form-linha">
+            <div class="form-grupo">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+              <span class="form-erro" id="erro-nome"></span>
+            </div>
+            <div class="form-grupo">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Razão social (opcional)">
+            </div>
+          </div>
+
+          <div class="form-linha">
+            <div class="form-grupo">
+              <label for="telefone">Telefone *</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+              <span class="form-erro" id="erro-telefone"></span>
+            </div>
+            <div class="form-grupo">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="email@empresa.com" required>
+              <span class="form-erro" id="erro-email"></span>
+            </div>
+          </div>
+
+          <div class="form-grupo">
+            <label for="categoria">Categoria do produto</label>
+            <select id="categoria" name="categoria">
+              <option value="">Selecione uma categoria</option>
+              <option value="chapas">Chapas e placas</option>
+              <option value="barras">Barras e perfis</option>
+              <option value="tubos">Tubos e canos</option>
+              <option value="maquinas">Máquinas industriais</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="descricao">Descrição do pedido *</label>
+            <textarea
+              id="descricao"
+              name="descricao"
+              rows="5"
+              placeholder="Descreva o material, dimensões, quantidade e prazo desejado..."
+              required
+            ></textarea>
+            <span class="form-erro" id="erro-descricao"></span>
+          </div>
+
+          <!-- Checkbox de aceite de política -->
+          <label class="form-aceite">
+            <input type="checkbox" id="aceite" name="aceite" required>
+            Li e concordo com a <a href="#">política de privacidade</a>
+          </label>
+          <span class="form-erro" id="erro-aceite"></span>
+
+          <!-- Botão de envio -->
+          <button type="submit" class="btn btn-primario btn-enviar" id="btn-enviar">
+            <i class="ti ti-send"></i>
+            Enviar solicitação
+          </button>
+
+        </form>
+
+        <!-- Mensagem de sucesso (escondida até o formulário ser enviado) -->
+        <div class="form-sucesso" id="form-sucesso" style="display: none;">
+          <i class="ti ti-circle-check"></i>
+          <h3>Solicitação enviada!</h3>
+          <p>Recebemos seu pedido e retornaremos em até 24 horas úteis.</p>
+          <a href="catalogo.html" class="btn btn-primario">Voltar ao catálogo</a>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="rodape-esquerda">
+      <p>© 2025 Aços Maq · Conchal, SP</p>
+      <p>
+        <i class="ti ti-phone"></i> (19) 99893-4893 &nbsp;|&nbsp;
+        <i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br
+      </p>
+    </div>
+    <div class="rodape-links">
+      <a href="https://www.instagram.com/acosmaq/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5519998934893" target="_blank">WhatsApp</a>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/orcamento.js"></script>
+
+</body>
+</html>

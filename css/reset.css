@@ -1,0 +1,56 @@
+/*
+  =============================================
+  RESET.CSS — Zerando os estilos do navegador
+  =============================================
+
+  Por padrão, cada navegador (Chrome, Firefox, Safari)
+  aplica estilos próprios nos elementos HTML.
+  Isso causa inconsistências visuais entre navegadores.
+
+  Este arquivo "zera" esses estilos para que
+  nosso design fique igual em todos os navegadores.
+
+  Baseado no "Modern CSS Reset" (Andy Bell).
+*/
+
+/* Aplica border-box em TODOS os elementos.
+   Isso faz com que padding e border sejam incluídos
+   no cálculo do tamanho do elemento (muito mais intuitivo). */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove margens e paddings padrão de todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Melhora o comportamento padrão de listas
+   (remove bullet points e numeração) */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove o sublinhado padrão dos links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Faz imagens e vídeos se ajustarem ao container */
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Faz formulários herdarem a fonte do body
+   (por padrão eles têm fonte própria no navegador) */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Remove bordas de tabelas duplicadas */
+table {
+  border-collapse: collapse;
+}

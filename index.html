@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aços Maq — Ferros, Aços e Máquinas Industriais</title>
+  <meta name="description" content="Distribuidora de ferros, aços e máquinas industriais em Conchal, SP. Estoque pronto, entrega rápida e atendimento técnico especializado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- =============================================
+       BARRA SUPERIOR
+       ============================================= -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-info">
+        <span><i class="ti ti-phone"></i> (19) 99893-4893</span>
+        <span><i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br</span>
+        <span><i class="ti ti-map-pin"></i> Conchal, SP</span>
+      </div>
+      <div class="topbar-horario">
+        <i class="ti ti-clock"></i> Seg - Sex: 08:00 - 18:00
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =============================================
+       NAVBAR COM DROPDOWN
+       ============================================= -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="imagens/logo.png" alt="Aços Maq" class="nav-logo-img">
+    </div>
+
+    <!-- Botão hamburguer (celular) -->
+    <button class="nav-hamburguer" id="nav-hamburguer" aria-label="Abrir menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+
+      <li><a href="index.html" class="ativo">Início</a></li>
+
+      <li><a href="#sobre">Empresa</a></li>
+
+      <!-- Item com dropdown -->
+      <li class="nav-dropdown">
+        <a href="catalogo.html">
+          Catálogo <i class="ti ti-chevron-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="catalogo.html?categoria=chapas"><i class="ti ti-square"></i> Chapas e placas</a></li>
+          <li><a href="catalogo.html?categoria=barras"><i class="ti ti-line-dashed"></i> Barras e perfis</a></li>
+          <li><a href="catalogo.html?categoria=tubos"><i class="ti ti-circle"></i> Tubos e canos</a></li>
+          <li><a href="catalogo.html?categoria=maquinas"><i class="ti ti-tool"></i> Máquinas</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#equipe">Nossa equipe</a></li>
+      <li><a href="orcamento.html">Orçamento</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
+    <a href="orcamento.html" class="btn btn-primario nav-cta">Solicitar orçamento</a>
+  </nav>
+
+
+  <!-- =============================================
+       SLIDER
+       ============================================= -->
+  <section class="slider" id="slider">
+    <div class="slides-wrap" id="slides-wrap">
+
+      <!-- SLIDE 1 — com suporte a vídeo -->
+      <div class="slide slide-video ativo">
+        <video class="slide-video-bg" autoplay muted loop playsinline
+          poster="imagens/slider/slide-1.jpg">
+          <source src="imagens/slider/video.mp4" type="video/mp4">
+        </video>
+        <div class="slide-overlay"></div>
+        <div class="slide-conteudo">
+          <span class="slide-tag"><i class="ti ti-settings"></i> Distribuidora industrial</span>
+          <h1>Ferros, aços e máquinas para sua <span class="destaque">produção</span></h1>
+          <p>Distribuição de materiais siderúrgicos e equipamentos industriais com estoque pronto e entrega rápida.</p>
+          <div class="slide-botoes">
+            <a href="catalogo.html" class="btn btn-primario"><i class="ti ti-list"></i> Ver catálogo</a>
+            <a href="orcamento.html" class="btn btn-secundario"><i class="ti ti-file-text"></i> Pedir orçamento</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="slide slide-video">
+        <img class="slide-video-bg" src="imagens/slider/slide-2.jpg" alt="Galpão Aços Maq">
+        <div class="slide-overlay"></div>
+        <div class="slide-conteudo">
+          <span class="slide-tag"><i class="ti ti-award"></i> Qualidade garantida</span>
+          <h1>Materiais com <span class="destaque">certificação</span> e procedência</h1>
+          <p>Trabalhamos com aços carbono, inoxidável e ferro fundido dentro das normas ABNT e ASTM.</p>
+          <div class="slide-botoes">
+            <a href="catalogo.html" class="btn btn-primario"><i class="ti ti-list"></i> Ver catálogo</a>
+            <a href="orcamento.html" class="btn btn-secundario"><i class="ti ti-file-text"></i> Pedir orçamento</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="slide slide-video">
+        <img class="slide-video-bg" src="imagens/slider/slide-3.jpg" alt="Estoque Aços Maq">
+        <div class="slide-overlay"></div>
+        <div class="slide-conteudo">
+          <span class="slide-tag"><i class="ti ti-truck"></i> Entrega rápida</span>
+          <h1>Atendimento técnico e <span class="destaque">entrega</span> no prazo</h1>
+          <p>Nossa equipe especializada está pronta para ajudar você a encontrar a solução ideal.</p>
+          <div class="slide-botoes">
+            <a href="orcamento.html" class="btn btn-primario"><i class="ti ti-file-text"></i> Solicitar orçamento</a>
+            <a href="#sobre" class="btn btn-secundario"><i class="ti ti-arrow-down"></i> Saiba mais</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="slider-btn slider-prev" onclick="moverSlide(-1)" aria-label="Anterior"><i class="ti ti-chevron-left"></i></button>
+    <button class="slider-btn slider-next" onclick="moverSlide(1)"  aria-label="Próximo"><i class="ti ti-chevron-right"></i></button>
+
+    <div class="slider-dots" id="slider-dots">
+      <button class="dot ativo" onclick="irParaSlide(0)"></button>
+      <button class="dot"       onclick="irParaSlide(1)"></button>
+      <button class="dot"       onclick="irParaSlide(2)"></button>
+    </div>
+
+    <div class="slider-stats">
+      <div class="slider-stat"><span class="stat-numero">15+</span><span class="stat-label">Anos de mercado</span></div>
+      <div class="slider-stat"><span class="stat-numero">500+</span><span class="stat-label">Produtos em estoque</span></div>
+      <div class="slider-stat"><span class="stat-numero">24h</span><span class="stat-label">Resposta de orçamento</span></div>
+      <div class="slider-stat"><span class="stat-numero">100%</span><span class="stat-label">Satisfação garantida</span></div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SOBRE NÓS
+       ============================================= -->
+  <section class="secao sobre-secao" id="sobre">
+    <div class="sobre-grid">
+
+      <div class="sobre-texto">
+        <span class="secao-tag">Empresa</span>
+        <h2>Sobre a Aços Maq</h2>
+        <p>
+          Desde sua fundação, a <strong>Aços Maq</strong> vem alcançando progressivo e contínuo
+          sucesso no mercado, devido à qualidade em seus produtos e pontualidade nos prazos
+          e nas condições das respectivas entregas.
+        </p>
+        <p>
+          Somos especializados na distribuição de materiais siderúrgicos e equipamentos industriais,
+          atendendo empresas dos segmentos agrícola, automotivo, construção civil, mineração e energia.
+        </p>
+        <a href="orcamento.html" class="btn btn-primario" style="margin-top: 1rem;">
+          <i class="ti ti-file-text"></i> Solicitar orçamento
+        </a>
+      </div>
+
+      <div class="sobre-cards">
+        <div class="sobre-card">
+          <i class="ti ti-target"></i>
+          <h4>Nossa Missão</h4>
+          <p>Melhorar continuamente nossos produtos, serviços e prazos, buscando a cada dia qualidade e satisfação dos nossos clientes.</p>
+        </div>
+        <div class="sobre-card">
+          <i class="ti ti-eye"></i>
+          <h4>Nossa Visão</h4>
+          <p>Ser e manter-se competitivos no mercado nacional em termos de preço, qualidade e agilidade de entrega.</p>
+        </div>
+        <div class="sobre-card">
+          <i class="ti ti-heart"></i>
+          <h4>Nossos Valores</h4>
+          <p>Compromisso com a qualidade, ética nos negócios, responsabilidade social e segurança para nossos colaboradores.</p>
+        </div>
+        <div class="sobre-card">
+          <i class="ti ti-award"></i>
+          <h4>Pontualidade</h4>
+          <p>Sempre prezamos pela pontualidade nas entregas e pela excelência no atendimento ao cliente.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       CONTADOR ANIMADO
+       ============================================= -->
+  <section class="contador-secao" id="contadores">
+    <div class="contador-grid">
+      <div class="contador-item">
+        <span class="contador-numero" data-alvo="15">0</span>
+        <span class="contador-sufixo">+</span>
+        <span class="contador-label">Anos de mercado</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-numero" data-alvo="500">0</span>
+        <span class="contador-sufixo">+</span>
+        <span class="contador-label">Produtos em estoque</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-numero" data-alvo="1200">0</span>
+        <span class="contador-sufixo">+</span>
+        <span class="contador-label">Clientes atendidos</span>
+      </div>
+      <div class="contador-item">
+        <span class="contador-numero" data-alvo="20">0</span>
+        <span class="contador-sufixo">+</span>
+        <span class="contador-label">Categorias de produto</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       CATEGORIAS
+       ============================================= -->
+  <section class="secao categorias">
+    <div class="secao-header">
+      <span class="secao-tag">Catálogo</span>
+      <h2>O que você procura?</h2>
+      <p>Selecione uma categoria para ver os produtos disponíveis</p>
+    </div>
+    <div class="categorias-grid">
+      <a href="catalogo.html?categoria=chapas" class="categoria-card">
+        <i class="ti ti-square categoria-icone"></i>
+        <strong>Chapas e placas</strong>
+        <span>Aço carbono e inoxidável</span>
+      </a>
+      <a href="catalogo.html?categoria=barras" class="categoria-card">
+        <i class="ti ti-line-dashed categoria-icone"></i>
+        <strong>Barras e perfis</strong>
+        <span>Redonda, quadrada, chata</span>
+      </a>
+      <a href="catalogo.html?categoria=tubos" class="categoria-card">
+        <i class="ti ti-circle categoria-icone"></i>
+        <strong>Tubos e canos</strong>
+        <span>Estrutural e industrial</span>
+      </a>
+      <a href="catalogo.html?categoria=maquinas" class="categoria-card">
+        <i class="ti ti-tool categoria-icone"></i>
+        <strong>Máquinas</strong>
+        <span>Tornos, fresas e mais</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       GALERIA DE DESTAQUE
+       ============================================= -->
+  <section class="secao destaque-secao" id="destaque">
+    <div class="secao-header">
+      <span class="secao-tag">Produtos em destaque</span>
+      <h2>Conheça nosso portfólio</h2>
+      <p>Clique em qualquer produto para solicitar um orçamento</p>
+    </div>
+
+    <div class="destaque-grid">
+      <a href="orcamento.html?produto=Chapas+de+Aço+Carbono" class="destaque-card destaque-grande">
+        <img src="imagens/destaque/calandra.jpg" alt="Chapas de Aço Carbono"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="destaque-placeholder"><i class="ti ti-square"></i></div>
+        <div class="destaque-overlay">
+          <span class="destaque-cat">Chapas</span>
+          <h3>Chapas de Aço Carbono</h3>
+          <span class="destaque-cta">Solicitar orçamento <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="orcamento.html?produto=Barra+Redonda+Inox" class="destaque-card">
+        <img src="imagens/destaque/perfis.jpg" alt="Barra Redonda Inox"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="destaque-placeholder"><i class="ti ti-line-dashed"></i></div>
+        <div class="destaque-overlay">
+          <span class="destaque-cat">Barras</span>
+          <h3>Barra Redonda Inox</h3>
+          <span class="destaque-cta">Solicitar orçamento <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="orcamento.html?produto=Tubo+Estrutural" class="destaque-card">
+        <img src="imagens/destaque/galpao.jpg" alt="Tubo Estrutural"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="destaque-placeholder"><i class="ti ti-circle"></i></div>
+        <div class="destaque-overlay">
+          <span class="destaque-cat">Tubos</span>
+          <h3>Tubo Estrutural</h3>
+          <span class="destaque-cta">Solicitar orçamento <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="orcamento.html?produto=Perfil+U+Cantoneira" class="destaque-card">
+        <img src="imagens/destaque/calandra-perfis.jpg" alt="Cantoneira"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="destaque-placeholder"><i class="ti ti-ruler"></i></div>
+        <div class="destaque-overlay">
+          <span class="destaque-cat">Perfis</span>
+          <h3>Perfil U / Cantoneira</h3>
+          <span class="destaque-cta">Solicitar orçamento <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="orcamento.html?produto=Torno+Mecânico+CNC" class="destaque-card">
+        <img src="imagens/destaque/maquinas.jpg" alt="Torno CNC"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="destaque-placeholder"><i class="ti ti-tool"></i></div>
+        <div class="destaque-overlay">
+          <span class="destaque-cat">Máquinas</span>
+          <h3>Torno Mecânico CNC</h3>
+          <span class="destaque-cta">Solicitar orçamento <i class="ti ti-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="catalogo.html" class="btn btn-primario">
+        <i class="ti ti-list"></i> Ver catálogo completo
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       EQUIPE
+       ============================================= -->
+  <section class="secao equipe-secao" id="equipe">
+    <div class="secao-header">
+      <span class="secao-tag">Nossa equipe</span>
+      <h2>Fale com nossos vendedores</h2>
+      <p>Entre em contato pelo telefone ou WhatsApp e obtenha os melhores preços</p>
+    </div>
+
+    <div class="equipe-grid">
+
+      <div class="equipe-card">
+        <div class="equipe-foto">
+          <img src="imagens/equipe/vendedor-1.jpg" alt="Vendedor"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="equipe-placeholder"><i class="ti ti-user"></i></div>
+        </div>
+        <div class="equipe-info">
+          <h4>Nome do Vendedor</h4>
+          <span class="equipe-cargo">Consultor de Vendas</span>
+          <a href="https://wa.me/5519998934893" class="equipe-whatsapp" target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> (19) 99893-4893
+          </a>
+          <a href="mailto:vendasmaq@acosmaqconchal.com.br" class="equipe-email">
+            <i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br
+          </a>
+        </div>
+      </div>
+
+      <div class="equipe-card">
+        <div class="equipe-foto">
+          <img src="imagens/equipe/vendedor-2.jpg" alt="Vendedor"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="equipe-placeholder"><i class="ti ti-user"></i></div>
+        </div>
+        <div class="equipe-info">
+          <h4>Nome do Vendedor</h4>
+          <span class="equipe-cargo">Consultor de Vendas</span>
+          <a href="https://wa.me/5519998934893" class="equipe-whatsapp" target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> (19) 99893-4893
+          </a>
+          <a href="mailto:comercial@acosmaqconchal.com.br" class="equipe-email">
+            <i class="ti ti-mail"></i> comercial@acosmaqconchal.com.br
+          </a>
+        </div>
+      </div>
+
+      <div class="equipe-card">
+        <div class="equipe-foto">
+          <img src="imagens/equipe/vendedor-3.jpg" alt="Vendedor"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+          <div class="equipe-placeholder"><i class="ti ti-user"></i></div>
+        </div>
+        <div class="equipe-info">
+          <h4>Nome do Vendedor</h4>
+          <span class="equipe-cargo">Consultor de Vendas</span>
+          <a href="https://wa.me/5519998934893" class="equipe-whatsapp" target="_blank">
+            <i class="ti ti-brand-whatsapp"></i> (19) 99893-4893
+          </a>
+          <a href="mailto:vendasmaq@acosmaqconchal.com.br" class="equipe-email">
+            <i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       BANNER CTA
+       ============================================= -->
+  <section class="banner-cta">
+    <div class="banner-cta-inner">
+      <div>
+        <h2>Pronto para fazer seu orçamento?</h2>
+        <p>Nossa equipe responde em até 24 horas úteis com a melhor proposta.</p>
+      </div>
+      <div class="banner-cta-acoes">
+        <a href="orcamento.html" class="btn btn-primario">
+          <i class="ti ti-file-text"></i> Solicitar orçamento
+        </a>
+        <a href="https://wa.me/5519998934893" target="_blank" class="btn-wpp-banner">
+          <i class="ti ti-brand-whatsapp"></i> Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       SEGMENTOS
+       ============================================= -->
+  <section class="secao segmentos-secao">
+    <div class="secao-header">
+      <span class="secao-tag">Segmentos</span>
+      <h2>Quem atendemos</h2>
+      <p>Presentes nos principais segmentos da indústria nacional</p>
+    </div>
+    <div class="segmentos-grid">
+      <div class="segmento-item"><i class="ti ti-tractor"></i><span>Agrícola</span></div>
+      <div class="segmento-item"><i class="ti ti-car"></i><span>Automotivo</span></div>
+      <div class="segmento-item"><i class="ti ti-building"></i><span>Construção Civil</span></div>
+      <div class="segmento-item"><i class="ti ti-bolt"></i><span>Energia</span></div>
+      <div class="segmento-item"><i class="ti ti-mountain"></i><span>Mineração</span></div>
+      <div class="segmento-item"><i class="ti ti-tool"></i><span>Metalurgia</span></div>
+    </div>
+  </section>
+
+
+  <!-- =============================================
+       RODAPÉ COMPLETO
+       ============================================= -->
+  <footer class="rodape-completo" id="contato">
+    <div class="rodape-topo">
+
+      <div class="rodape-col">
+        <img src="imagens/logo.png" alt="Aços Maq" class="rodape-logo">
+        <p>Distribuidora de ferros, aços e máquinas industriais, atendendo empresas de todo o interior paulista com qualidade e agilidade.</p>
+        <div class="rodape-redes">
+          <a href="https://www.instagram.com/acosmaq/" target="_blank" aria-label="Instagram">
+            <i class="ti ti-brand-instagram"></i>
+          </a>
+          <a href="https://wa.me/5519998934893" target="_blank" aria-label="WhatsApp">
+            <i class="ti ti-brand-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Produtos</h4>
+        <ul>
+          <li><a href="catalogo.html?categoria=chapas">Chapas e placas</a></li>
+          <li><a href="catalogo.html?categoria=barras">Barras e perfis</a></li>
+          <li><a href="catalogo.html?categoria=tubos">Tubos e canos</a></li>
+          <li><a href="catalogo.html?categoria=maquinas">Máquinas</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Links úteis</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="orcamento.html">Solicitar orçamento</a></li>
+          <li><a href="#equipe">Nossa equipe</a></li>
+        </ul>
+      </div>
+
+      <div class="rodape-col">
+        <h4>Contato</h4>
+        <ul class="rodape-contato">
+          <li><i class="ti ti-phone"></i> (19) 99893-4893</li>
+          <li><i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br</li>
+          <li><i class="ti ti-map-pin"></i> Conchal, SP</li>
+          <li><i class="ti ti-clock"></i> Seg - Sex: 08:00 - 18:00</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="rodape-fundo">
+      <p>© 2025 Aços Maq. Todos os direitos reservados.</p>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </footer>
+
+
+  <!-- =============================================
+       BOTÃO FLUTUANTE DO WHATSAPP
+       ============================================= -->
+  <a href="https://wa.me/5519998934893?text=Olá! Gostaria de solicitar um orçamento."
+     target="_blank"
+     class="wpp-flutuante"
+     aria-label="Chamar no WhatsApp">
+    <i class="ti ti-brand-whatsapp"></i>
+  </a>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/home.js"></script>
+
+</body>
+</html>

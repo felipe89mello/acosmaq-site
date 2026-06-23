@@ -1,0 +1,283 @@
+/*
+  =============================================
+  ORCAMENTO.CSS — Estilos da página de orçamento
+  =============================================
+*/
+
+/* Seção geral */
+.orcamento-secao {
+  background-color: var(--cor-fundo);
+  padding-top: 2.5rem;
+}
+
+/* Container de duas colunas: info + formulário */
+.orcamento-container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;   /* Formulário um pouco mais largo */
+  gap: var(--espaco-xl);
+  margin-top: var(--espaco-xl);
+}
+
+
+/* =============================================
+   COLUNA DE INFORMAÇÕES
+   =============================================
+*/
+.orcamento-info {
+  background-color: var(--cor-escura);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-xl);
+  color: #fff;
+  height: fit-content;
+}
+
+.orcamento-info h2 {
+  color: #fff;
+  font-size: var(--fonte-lg);
+  margin-bottom: var(--espaco-sm);
+}
+
+.orcamento-info > p {
+  color: #aaa;
+  font-size: var(--fonte-sm);
+  margin-bottom: var(--espaco-lg);
+}
+
+/* Lista de itens de contato */
+.contato-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+  margin-bottom: var(--espaco-lg);
+}
+
+.contato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.contato-item i {
+  color: var(--cor-primaria);
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.contato-item strong {
+  display: block;
+  color: #aaa;
+  font-size: var(--fonte-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.contato-item a,
+.contato-item span {
+  color: #ddd;
+  font-size: var(--fonte-sm);
+}
+
+.contato-item a:hover { color: var(--cor-primaria); }
+
+/* Caixa de aviso de resposta */
+.aviso-resposta {
+  background-color: rgba(224, 92, 42, 0.1);
+  border-left: 3px solid var(--cor-primaria);
+  border-radius: 0 var(--raio-sm) var(--raio-sm) 0;
+  padding: var(--espaco-md);
+  margin-bottom: var(--espaco-lg);
+}
+
+.aviso-titulo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cor-primaria);
+  font-size: var(--fonte-sm);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.aviso-resposta p {
+  color: #aaa;
+  font-size: var(--fonte-xs);
+  line-height: 1.6;
+}
+
+/* Botão de WhatsApp */
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background-color: #25d366;   /* Cor oficial do WhatsApp */
+  color: #fff;
+  border-radius: var(--raio-sm);
+  font-size: var(--fonte-sm);
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.btn-whatsapp:hover { opacity: 0.88; }
+.btn-whatsapp i { font-size: 18px; }
+
+
+/* =============================================
+   FORMULÁRIO
+   =============================================
+*/
+.orcamento-form-wrap {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-xl);
+}
+
+/* Linha com dois campos lado a lado */
+.form-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-md);
+  margin-bottom: var(--espaco-md);
+}
+
+/* Grupo individual de campo */
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: var(--espaco-md);
+}
+
+/* Label do campo */
+.form-grupo label {
+  font-size: var(--fonte-xs);
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Input, textarea e select */
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto);
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Borda laranja ao focar no campo */
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+  border-color: var(--cor-primaria);
+}
+
+/* Borda vermelha quando campo inválido */
+.form-grupo input.invalido,
+.form-grupo textarea.invalido {
+  border-color: #e24b4a;
+}
+
+.form-grupo textarea { resize: vertical; }
+
+/* Mensagem de erro abaixo do campo */
+.form-erro {
+  font-size: var(--fonte-xs);
+  color: #e24b4a;
+  min-height: 16px;   /* Evita "pulo" de layout ao aparecer/sumir */
+}
+
+/* Checkbox de aceite */
+.form-aceite {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto-suave);
+  cursor: pointer;
+  margin-bottom: var(--espaco-sm);
+}
+
+.form-aceite input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+.form-aceite a {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+/* Botão de envio ocupa toda a largura */
+.btn-enviar {
+  width: 100%;
+  justify-content: center;
+  padding: 12px;
+  font-size: var(--fonte-base);
+  margin-top: var(--espaco-sm);
+}
+
+/* Estado de carregamento do botão */
+.btn-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =============================================
+   MENSAGEM DE SUCESSO
+   =============================================
+*/
+.form-sucesso {
+  text-align: center;
+  padding: 3rem var(--espaco-xl);
+}
+
+.form-sucesso i {
+  font-size: 56px;
+  color: var(--cor-verde);
+  display: block;
+  margin-bottom: var(--espaco-md);
+}
+
+.form-sucesso h3 {
+  font-size: var(--fonte-lg);
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-sm);
+}
+
+.form-sucesso p {
+  margin-bottom: var(--espaco-lg);
+}
+
+
+/* =============================================
+   RESPONSIVO
+   =============================================
+*/
+@media (max-width: 900px) {
+  .orcamento-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-linha {
+    grid-template-columns: 1fr;
+  }
+}

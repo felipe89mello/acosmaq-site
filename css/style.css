@@ -1,0 +1,511 @@
+/*
+  =============================================
+  STYLE.CSS — Estilos principais do site
+  =============================================
+
+  Organização do arquivo:
+  1. Variáveis globais (cores, fontes, espaçamentos)
+  2. Estilos base (body, tipografia)
+  3. Componentes reutilizáveis (botões, tags)
+  4. Navbar
+  5. Hero
+  6. Seção de categorias
+  7. Rodapé
+  8. Responsivo (celular e tablet)
+*/
+
+
+/* =============================================
+   1. VARIÁVEIS GLOBAIS
+   =============================================
+   Variáveis CSS (também chamadas de "Custom Properties")
+   permitem definir valores uma vez e reutilizar em todo o arquivo.
+   Para mudar a cor principal do site, basta alterar aqui!
+*/
+:root {
+  /* Cores principais */
+  --cor-primaria:     #E05C2A;   /* Laranja — cor de destaque da marca */
+  --cor-escura:       #1a1a1a;   /* Quase-preto — fundo do hero e navbar */
+  --cor-fundo:        #f5f5f5;   /* Cinza claro — fundo das seções */
+  --cor-branco:       #ffffff;
+  --cor-texto:        #222222;   /* Texto principal (quase-preto) */
+  --cor-texto-suave:  #666666;   /* Texto secundário (cinza médio) */
+  --cor-borda:        #e0e0e0;   /* Cor de bordas e divisores */
+  --cor-verde:        #2e9e5b;   /* Para indicar "em estoque" */
+
+  /* Tipografia */
+  --fonte-principal:  'Inter', sans-serif;
+
+  /* Escala de tamanhos de fonte */
+  --fonte-xs:   11px;
+  --fonte-sm:   13px;
+  --fonte-md:   15px;
+  --fonte-base: 16px;
+  --fonte-lg:   20px;
+  --fonte-xl:   28px;
+  --fonte-2xl:  36px;
+
+  /* Espaçamentos */
+  --espaco-sm:  0.5rem;   /* 8px */
+  --espaco-md:  1rem;     /* 16px */
+  --espaco-lg:  1.5rem;   /* 24px */
+  --espaco-xl:  2rem;     /* 32px */
+  --espaco-2xl: 3rem;     /* 48px */
+
+  /* Bordas arredondadas */
+  --raio-sm:  4px;
+  --raio-md:  8px;
+  --raio-lg:  12px;
+  --raio-pill: 999px;   /* Para tags e badges arredondados */
+}
+
+
+/* =============================================
+   2. ESTILOS BASE
+   =============================================
+   Configurações globais para o corpo da página.
+*/
+body {
+  font-family: var(--fonte-principal);
+  font-size: var(--fonte-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+
+  /* Evita scroll horizontal indesejado */
+  overflow-x: hidden;
+}
+
+/* Títulos */
+h1 { font-size: var(--fonte-2xl); font-weight: 600; line-height: 1.25; }
+h2 { font-size: var(--fonte-xl);  font-weight: 500; line-height: 1.3; }
+h3 { font-size: var(--fonte-lg);  font-weight: 500; }
+
+/* Parágrafo */
+p {
+  font-size: var(--fonte-md);
+  color: var(--cor-texto-suave);
+  line-height: 1.7;
+}
+
+
+/* =============================================
+   3. COMPONENTES REUTILIZÁVEIS
+   =============================================
+   Estilos que são usados em múltiplos lugares do site.
+   A ideia é criar "blocos" que você encaixa onde quiser.
+*/
+
+/* --- BOTÕES --- */
+/*
+  Criamos uma classe base ".btn" e variações:
+  .btn-primario = laranja (ação principal)
+  .btn-secundario = transparente com borda (ação secundária)
+*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--raio-sm);
+  font-size: var(--fonte-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn:hover { opacity: 0.88; }
+.btn:active { transform: scale(0.97); }
+
+.btn-primario {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- CABEÇALHO DE SEÇÃO --- */
+/*
+  Padrão visual reutilizado no topo de cada seção:
+  tag colorida → título → subtítulo
+*/
+.secao-header {
+  text-align: center;
+  margin-bottom: var(--espaco-xl);
+}
+
+.secao-tag {
+  display: inline-block;
+  background-color: #FEF0E7;
+  color: var(--cor-primaria);
+  font-size: var(--fonte-xs);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--raio-pill);
+  margin-bottom: var(--espaco-sm);
+}
+
+.secao-header h2 {
+  color: var(--cor-texto);
+  margin-bottom: 6px;
+}
+
+/* --- SEÇÃO GENÉRICA --- */
+.secao {
+  padding: var(--espaco-2xl) var(--espaco-xl);
+}
+
+
+/* =============================================
+   4. NAVBAR (MENU SUPERIOR)
+   =============================================
+*/
+.navbar {
+  /* Fundo escuro, igual ao hero */
+  background-color: var(--cor-escura);
+
+  /* Flexbox: alinha os itens em linha, espaçados */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--espaco-xl);
+  height: 56px;
+
+  /* Fica fixo no topo enquanto o usuário rola a página */
+  position: sticky;
+  top: 0;
+  z-index: 100;   /* Fica na frente de outros elementos */
+}
+
+/* Logo: ícone + texto */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--cor-primaria);
+  border-radius: var(--raio-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.nav-logo-text {
+  color: #fff;
+  font-size: var(--fonte-md);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/*
+  Logo em imagem (substitui o ícone padrão).
+  Ajuste a altura conforme o tamanho do seu arquivo.
+  A largura se ajusta automaticamente com "width: auto".
+*/
+.nav-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Links de navegação */
+.nav-links {
+  display: flex;
+  gap: var(--espaco-lg);
+}
+
+.nav-links a {
+  color: #ccc;
+  font-size: var(--fonte-sm);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  color: #fff;
+}
+
+
+/* =============================================
+   5. HERO (SEÇÃO PRINCIPAL)
+   =============================================
+*/
+.hero {
+  background-color: var(--cor-escura);
+  padding: 3.5rem var(--espaco-xl) 3rem;
+
+  /* Flexbox: conteúdo à esquerda, painel à direita */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xl);
+}
+
+/* Lado esquerdo do hero */
+.hero-conteudo {
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Tag decorativa acima do título */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(224, 92, 42, 0.15);
+  color: var(--cor-primaria);
+  font-size: var(--fonte-xs);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--raio-pill);
+  margin-bottom: var(--espaco-md);
+}
+
+/* Título principal */
+.hero h1 { color: #fff; }
+
+/* A palavra em laranja dentro do título */
+.hero h1 .destaque { color: var(--cor-primaria); }
+
+/* Subtítulo */
+.hero-subtitulo {
+  color: #aaa;
+  margin: var(--espaco-md) 0 var(--espaco-lg);
+  font-size: var(--fonte-sm);
+}
+
+/* Grupo de botões */
+.hero-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estatísticas (15+ anos, 500+ produtos, etc) */
+.hero-stats {
+  display: flex;
+  gap: var(--espaco-lg);
+  margin-top: var(--espaco-xl);
+  padding-top: var(--espaco-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-numero {
+  display: block;
+  color: var(--cor-primaria);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.stat-label {
+  display: block;
+  color: #888;
+  font-size: var(--fonte-xs);
+  margin-top: 2px;
+}
+
+/* Painel lateral direito */
+.hero-painel {
+  flex: 0 0 220px;   /* Largura fixa de 220px, não cresce nem encolhe */
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-lg);
+}
+
+.painel-titulo {
+  color: #aaa;
+  font-size: var(--fonte-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--espaco-md);
+}
+
+/* Cada linha de material no painel */
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.material-item:last-child { border-bottom: none; }
+
+/* Bolinha colorida */
+.material-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.material-nome {
+  color: #ddd;
+  font-size: var(--fonte-sm);
+  flex: 1;
+}
+
+.material-status {
+  color: var(--cor-primaria);
+  font-size: var(--fonte-xs);
+}
+
+
+/* =============================================
+   6. SEÇÃO DE CATEGORIAS
+   =============================================
+*/
+.categorias {
+  background-color: var(--cor-branco);
+}
+
+/* Grid de 4 colunas */
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Cada card de categoria */
+.categoria-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: var(--espaco-lg) var(--espaco-md);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+  color: var(--cor-texto);
+}
+
+.categoria-card:hover {
+  border-color: var(--cor-primaria);
+  transform: translateY(-2px);   /* Efeito de "levantar" ao passar o mouse */
+}
+
+.categoria-icone {
+  font-size: 22px;
+  color: var(--cor-primaria);
+}
+
+.categoria-card strong {
+  font-size: var(--fonte-sm);
+  font-weight: 500;
+}
+
+.categoria-card span {
+  font-size: var(--fonte-xs);
+  color: var(--cor-texto-suave);
+}
+
+
+/* =============================================
+   7. RODAPÉ
+   =============================================
+*/
+.rodape {
+  background-color: #111;
+  padding: var(--espaco-lg) var(--espaco-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-md);
+}
+
+.rodape-esquerda p {
+  color: #666;
+  font-size: var(--fonte-xs);
+  line-height: 1.8;
+}
+
+.rodape-esquerda i {
+  color: var(--cor-primaria);
+}
+
+.rodape-links {
+  display: flex;
+  gap: var(--espaco-md);
+}
+
+.rodape-links a {
+  color: #555;
+  font-size: var(--fonte-xs);
+  transition: color 0.2s;
+}
+
+.rodape-links a:hover { color: #aaa; }
+
+
+/* =============================================
+   8. RESPONSIVO
+   =============================================
+   Media queries: ajustam o layout para telas menores.
+
+   Breakpoints usados:
+   - max-width: 900px → tablet
+   - max-width: 600px → celular
+*/
+
+/* TABLET */
+@media (max-width: 900px) {
+
+  /* Hero vira coluna única */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-conteudo { max-width: 100%; }
+
+  .hero-botoes { justify-content: center; }
+
+  .hero-stats { justify-content: center; }
+
+  /* Painel ocupa largura total */
+  .hero-painel { flex: 0 0 auto; width: 100%; max-width: 360px; }
+
+  /* Categorias vira 2 colunas */
+  .categorias-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Esconde links do nav (no futuro: virar menu hamburguer) */
+  .nav-links { display: none; }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+  /* Reduz padding geral */
+  .secao { padding: var(--espaco-xl) var(--espaco-md); }
+  .hero  { padding: var(--espaco-xl) var(--espaco-md); }
+  .navbar { padding: 0 var(--espaco-md); }
+
+  /* Títulos menores */
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+
+  /* Categorias vira 1 coluna */
+  .categorias-grid { grid-template-columns: 1fr; }
+
+  /* Rodapé empilha */
+  .rodape { flex-direction: column; text-align: center; }
+  .rodape-links { flex-wrap: wrap; justify-content: center; }
+}

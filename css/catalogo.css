@@ -1,0 +1,323 @@
+/*
+  =============================================
+  CATALOGO.CSS — Estilos exclusivos do catálogo
+  =============================================
+  Este arquivo complementa o style.css com os
+  estilos específicos da página de catálogo.
+*/
+
+/* Cabeçalho da página do catálogo */
+.catalogo-header {
+  background-color: #fff;
+  padding: 2rem 2rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Layout principal: filtros + produtos lado a lado */
+.catalogo-corpo {
+  display: grid;
+  /* 220px para filtros, resto para produtos */
+  grid-template-columns: 220px 1fr;
+  gap: var(--espaco-xl);
+  background-color: var(--cor-fundo);
+}
+
+
+/* =============================================
+   FILTROS LATERAIS
+   =============================================
+*/
+.filtros {
+  background-color: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  padding: var(--espaco-lg);
+  height: fit-content;   /* Altura se ajusta ao conteúdo */
+  position: sticky;      /* Fica fixo ao rolar */
+  top: 72px;             /* 56px da navbar + 16px de margem */
+}
+
+.filtros h3 {
+  font-size: var(--fonte-md);
+  font-weight: 600;
+  margin-bottom: var(--espaco-md);
+  color: var(--cor-texto);
+}
+
+.filtro-grupo {
+  margin-bottom: var(--espaco-lg);
+  padding-bottom: var(--espaco-lg);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.filtro-grupo:last-of-type { border-bottom: none; }
+
+.filtro-titulo {
+  display: block;
+  font-size: var(--fonte-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--cor-texto-suave);
+  margin-bottom: 10px;
+}
+
+.filtro-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filtro-opcao {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.filtro-opcao input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--cor-primaria);   /* Cor do checkbox quando marcado */
+  cursor: pointer;
+}
+
+/* Botão para limpar todos os filtros */
+.btn-limpar-filtros {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  background: transparent;
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-sm);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  margin-top: var(--espaco-md);
+}
+
+.btn-limpar-filtros:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+
+/* =============================================
+   ÁREA DE PRODUTOS
+   =============================================
+*/
+.produtos-area { min-width: 0; }   /* Evita overflow no grid */
+
+/* Barra de busca + ordenação */
+.produtos-barra {
+  display: flex;
+  gap: 10px;
+  margin-bottom: var(--espaco-md);
+}
+
+/* Campo de busca */
+.busca-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: 0 12px;
+  height: 40px;
+  transition: border-color 0.2s;
+}
+
+.busca-wrap:focus-within {
+  /* :focus-within aplica estilo ao pai quando um filho tem foco */
+  border-color: var(--cor-primaria);
+}
+
+.busca-wrap i { color: var(--cor-texto-suave); }
+
+.busca-wrap input {
+  border: none;
+  outline: none;
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto);
+  flex: 1;
+  background: transparent;
+}
+
+/* Select de ordenação */
+.ordenar-select {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  padding: 0 12px;
+  height: 40px;
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto-suave);
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.resultado-count {
+  font-size: var(--fonte-sm);
+  color: var(--cor-texto-suave);
+  margin-bottom: var(--espaco-md);
+}
+
+/* Grid de produtos: 3 colunas */
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+
+/* =============================================
+   CARD DE PRODUTO
+   =============================================
+*/
+.produto-card {
+  background: #fff;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  overflow: hidden;   /* Garante que nada vaze fora do card */
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.produto-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Área de imagem/ícone do produto */
+.produto-imagem {
+  height: 160px;           /* altura maior para fotos reais ficarem bem */
+  background-color: var(--cor-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #ccc;
+  overflow: hidden;        /* impede a imagem de vazar fora do card */
+}
+
+/* Corpo do card */
+.produto-corpo {
+  padding: 10px 12px;
+  flex: 1;
+}
+
+.produto-categoria {
+  font-size: var(--fonte-xs);
+  color: var(--cor-primaria);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.produto-nome {
+  font-size: var(--fonte-sm);
+  font-weight: 500;
+  color: var(--cor-texto);
+  margin: 4px 0;
+}
+
+.produto-spec {
+  font-size: var(--fonte-xs);
+  color: var(--cor-texto-suave);
+  line-height: 1.6;
+}
+
+/* Rodapé do card: agora só o botão de orçamento */
+.produto-rodape {
+  padding: 8px 12px;
+  border-top: 1px solid var(--cor-borda);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Badge de disponibilidade */
+.produto-estoque {
+  font-size: var(--fonte-xs);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Bolinha colorida de status */
+.estoque-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Verde quando em estoque */
+.produto-estoque.estoque { color: var(--cor-verde); }
+.produto-estoque.estoque .estoque-dot { background-color: var(--cor-verde); }
+
+/* Laranja quando sob consulta */
+.produto-estoque.consulta { color: var(--cor-primaria); }
+.produto-estoque.consulta .estoque-dot { background-color: var(--cor-primaria); }
+
+/* Botão de orçamento dentro do card */
+.btn-orcamento {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  font-size: var(--fonte-xs);
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: var(--raio-sm);
+  transition: opacity 0.2s;
+}
+
+.btn-orcamento:hover { opacity: 0.85; }
+
+/* Imagem real dentro do card */
+.produto-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* recorta para preencher sem distorcer */
+  object-position: center; /* centraliza o recorte */
+  display: block;
+}
+
+/* Mensagem de "sem resultados" */
+.sem-resultados {
+  text-align: center;
+  padding: 3rem;
+  color: var(--cor-texto-suave);
+}
+
+.sem-resultados i { font-size: 48px; margin-bottom: 1rem; }
+.sem-resultados p { margin-bottom: 1rem; }
+
+
+/* =============================================
+   RESPONSIVO DO CATÁLOGO
+   =============================================
+*/
+@media (max-width: 900px) {
+  /* Filtros sobem para o topo */
+  .catalogo-corpo {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filtros deixam de ser sticky */
+  .filtros { position: static; }
+
+  /* Produtos ficam em 2 colunas */
+  .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .produtos-grid { grid-template-columns: 1fr; }
+}

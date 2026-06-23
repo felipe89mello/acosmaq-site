@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Aços Maq</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+  <!-- NAVBAR (mesma de todas as páginas) -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="imagens/logo.png" alt="Aços Maq" class="nav-logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="catalogo.html" class="ativo">Catálogo</a></li>
+      <li><a href="orcamento.html">Orçamento</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <a href="orcamento.html" class="btn btn-primario">Solicitar orçamento</a>
+  </nav>
+
+
+  <!--
+    =============================================
+    CABEÇALHO DO CATÁLOGO
+    =============================================
+  -->
+  <div class="catalogo-header">
+    <div class="secao-header">
+      <span class="secao-tag">Catálogo</span>
+      <h1>Nossos produtos</h1>
+      <p>Solicite orçamento de qualquer produto diretamente pelo catálogo</p>
+    </div>
+  </div>
+
+
+  <!--
+    =============================================
+    CORPO DO CATÁLOGO: FILTROS + PRODUTOS
+    =============================================
+    Layout de duas colunas:
+    - Esquerda: filtros laterais
+    - Direita: lista de produtos
+  -->
+  <div class="catalogo-corpo secao">
+
+    <!-- FILTROS LATERAIS -->
+    <aside class="filtros">
+      <h3>Filtrar por</h3>
+
+      <div class="filtro-grupo">
+        <label class="filtro-titulo">Categoria</label>
+        <div class="filtro-opcoes">
+          <!--
+            Cada filtro é um <label> + <input type="checkbox">.
+            O JavaScript em main.js detecta quando esses checkboxes mudam
+            e filtra os produtos exibidos na tela.
+          -->
+          <label class="filtro-opcao">
+            <input type="checkbox" value="chapas"> Chapas e placas
+          </label>
+          <label class="filtro-opcao">
+            <input type="checkbox" value="barras"> Barras e perfis
+          </label>
+          <label class="filtro-opcao">
+            <input type="checkbox" value="tubos"> Tubos e canos
+          </label>
+          <label class="filtro-opcao">
+            <input type="checkbox" value="maquinas"> Máquinas
+          </label>
+        </div>
+      </div>
+
+      <div class="filtro-grupo">
+        <label class="filtro-titulo">Material</label>
+        <div class="filtro-opcoes">
+          <label class="filtro-opcao">
+            <input type="checkbox" value="carbono"> Aço carbono
+          </label>
+          <label class="filtro-opcao">
+            <input type="checkbox" value="inox"> Aço inoxidável
+          </label>
+          <label class="filtro-opcao">
+            <input type="checkbox" value="ferro"> Ferro fundido
+          </label>
+        </div>
+      </div>
+
+      <button class="btn-limpar-filtros" onclick="limparFiltros()">
+        <i class="ti ti-x"></i> Limpar filtros
+      </button>
+    </aside>
+
+
+    <!-- ÁREA PRINCIPAL: BUSCA + GRID DE PRODUTOS -->
+    <main class="produtos-area">
+
+      <!-- Barra de busca + ordenação -->
+      <div class="produtos-barra">
+        <div class="busca-wrap">
+          <i class="ti ti-search"></i>
+          <!--
+            O id="busca-input" é usado pelo JavaScript
+            para detectar quando o usuário digita e filtrar os produtos.
+          -->
+          <input
+            type="text"
+            id="busca-input"
+            placeholder="Buscar produto, especificação, material..."
+          >
+        </div>
+        <select class="ordenar-select" id="ordenar-select">
+          <option value="">Ordenar por</option>
+          <option value="az">Nome A-Z</option>
+          <option value="za">Nome Z-A</option>
+          
+        </select>
+      </div>
+
+      <!-- Contador de resultados -->
+      <p class="resultado-count" id="resultado-count">Mostrando 6 produtos</p>
+
+      <!--
+        GRID DE PRODUTOS
+        =============================================
+        Cada produto tem:
+        - data-categoria: usada pelo filtro JS
+        - data-disponibilidade: usada pelo filtro JS
+        - data-material: usada pelo filtro JS
+        - data-nome: usada pela busca JS
+      -->
+      <div class="produtos-grid" id="produtos-grid">
+
+        <!-- PRODUTO 1 -->
+        <article
+          class="produto-card"
+          data-categoria="chapas"
+          data-disponibilidade="estoque"
+          data-material="carbono"
+          data-nome="chapa de aço carbono"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/chapa-carbono.jpg" alt="Chapa de Aço Carbono"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Chapas</span>
+            <h3 class="produto-nome">Chapa de Aço Carbono</h3>
+            <p class="produto-spec">
+              Espessura: 3mm a 25mm<br>
+              Dimensão: 1000×2000mm<br>
+              Norma ABNT NBR 6655
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Chapa+de+Aço+Carbono" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 2 -->
+        <article
+          class="produto-card"
+          data-categoria="barras"
+          data-disponibilidade="estoque"
+          data-material="inox"
+          data-nome="barra redonda inox 304"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/barra-inox.jpg" alt="Barra Redonda Inox 304"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Barras</span>
+            <h3 class="produto-nome">Barra Redonda Inox 304</h3>
+            <p class="produto-spec">
+              Diâmetro: 10mm a 150mm<br>
+              Comprimento: 6 metros<br>
+              Aço inoxidável austenítico
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Barra+Redonda+Inox+304" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 3 -->
+        <article
+          class="produto-card"
+          data-categoria="tubos"
+          data-disponibilidade="estoque"
+          data-material="carbono"
+          data-nome="tubo estrutural retangular"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/tubo-estrutural.jpg" alt="Tubo Estrutural Retangular"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Tubos</span>
+            <h3 class="produto-nome">Tubo Estrutural Retangular</h3>
+            <p class="produto-spec">
+              Seção: 20×20 a 200×100mm<br>
+              Espessura: 2mm a 6,35mm<br>
+              Aço carbono SAE 1020
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Tubo+Estrutural+Retangular" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 4 -->
+        <article
+          class="produto-card"
+          data-categoria="barras"
+          data-disponibilidade="estoque"
+          data-material="carbono"
+          data-nome="perfil u cantoneira"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/perfil-cantoneira.jpg" alt="Perfil U Cantoneira"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Perfis</span>
+            <h3 class="produto-nome">Perfil U / Cantoneira</h3>
+            <p class="produto-spec">
+              Aba: 19mm a 100mm<br>
+              Comprimento: 6 metros<br>
+              Aço carbono ASTM A-36
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Perfil+U+Cantoneira" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 5 -->
+        <article
+          class="produto-card"
+          data-categoria="maquinas"
+          data-disponibilidade="consulta"
+          data-material=""
+          data-nome="torno mecânico cnc"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/calandra.jpg" alt="Calandra"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Máquinas</span>
+            <h3 class="produto-nome">Torno Mecânico CNC</h3>
+            <p class="produto-spec">
+              Altura: 165mm<br>
+              Distância entre pontas: 750mm<br>
+              Potência: 5,5kW
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Torno+Mecânico+CNC" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+        <!-- PRODUTO 6 -->
+        <article
+          class="produto-card"
+          data-categoria="chapas"
+          data-disponibilidade="estoque"
+          data-material="carbono"
+          data-nome="chapa xadrez antiderrapante"
+        >
+          <div class="produto-imagem"><img src="imagens/produtos/chapa-xadrez.jpg" alt="Chapa Xadrez Antiderrapante"></div>
+          <div class="produto-corpo">
+            <span class="produto-categoria">Chapas</span>
+            <h3 class="produto-nome">Chapa Xadrez Antiderrapante</h3>
+            <p class="produto-spec">
+              Espessura: 3mm a 8mm<br>
+              Dimensão: 1250×2500mm<br>
+              Aço carbono com textura
+            </p>
+          </div>
+          <div class="produto-rodape">
+            <a href="orcamento.html?produto=Chapa+Xadrez" class="btn-orcamento">
+              Orçamento
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /produtos-grid -->
+
+      <!-- Mensagem quando nenhum produto é encontrado -->
+      <div class="sem-resultados" id="sem-resultados" style="display: none;">
+        <i class="ti ti-search-off"></i>
+        <p>Nenhum produto encontrado para sua busca.</p>
+        <a href="orcamento.html" class="btn btn-primario">Fazer orçamento personalizado</a>
+      </div>
+
+    </main>
+  </div><!-- /catalogo-corpo -->
+
+
+  <!-- RODAPÉ -->
+  <footer class="rodape" id="contato">
+    <div class="rodape-esquerda">
+      <p>© 2025 Aços Maq · Conchal, SP</p>
+      <p>
+        <i class="ti ti-phone"></i> (19) 99893-4893 &nbsp;|&nbsp;
+        <i class="ti ti-mail"></i> vendasmaq@acosmaqconchal.com.br
+      </p>
+    </div>
+    <div class="rodape-links">
+      <a href="https://www.instagram.com/acosmaq/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5519998934893" target="_blank">WhatsApp</a>
+      <a href="#">Política de privacidade</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/catalogo.js"></script>
+
+</body>
+</html>
