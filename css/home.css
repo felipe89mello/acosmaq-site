@@ -723,14 +723,19 @@
   .nav-cta { display: none; }
   .nav-links {
     display: none;
-    position: absolute;
-    top: 60px; left: 0; right: 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
     background: #1a1a1a;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 0.5rem;
     border-top: 1px solid rgba(255,255,255,0.08);
-    gap: 2px;
+    z-index: 999;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
   .nav-links.aberto { display: flex; }
   .nav-links > li { width: 100%; }
@@ -787,4 +792,43 @@
   .segmentos-grid { grid-template-columns: repeat(2, 1fr); }
   .rodape-topo { grid-template-columns: 1fr; }
   .rodape-fundo { flex-direction: column; text-align: center; }
+
+  /* Topbar no celular — esconde email e localização, mantém só o telefone */
+  .topbar-inner { flex-direction: column; gap: 4px; padding: 6px 1rem; }
+  .topbar-info span:nth-child(2),
+  .topbar-info span:nth-child(3) { display: none; }
+
+  /* Navbar ocupa largura total */
+  .navbar { padding: 0 1rem; }
+
+  /* Menu mobile — itens ocupam largura total */
+  .nav-links > li { width: 100%; }
+  .nav-links a { width: 100%; padding: 10px 12px; }
+
+  /* Dropdown mobile */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    border-radius: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .dropdown-menu li a { color: #bbb; padding-left: 28px; }
+  .nav-dropdown:hover .dropdown-menu { display: none; }
+  .nav-dropdown.aberto .dropdown-menu { display: block; }
+
+  /* Slider no celular */
+  .slide-conteudo { padding: 0 1rem 80px; }
+  .slide-conteudo h1 { font-size: 22px; }
+  .slide-botoes { flex-direction: column; }
+  .slide-botoes .btn { text-align: center; justify-content: center; }
+
+  /* Stats do slider em 2 colunas */
+  .slider-stats { grid-template-columns: repeat(2, 1fr); }
+  .slider-stat:nth-child(2) { border-right: none; }
+
+  /* WhatsApp flutuante menor */
+  .wpp-flutuante { width: 48px; height: 48px; font-size: 24px; bottom: 16px; right: 16px; }
 }

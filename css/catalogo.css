@@ -321,3 +321,13 @@
 @media (max-width: 600px) {
   .produtos-grid { grid-template-columns: 1fr; }
 }
+
+/* Celular — catálogo */
+@media (max-width: 600px) {
+  .catalogo-header { padding: 1rem 1rem 0; }
+  .catalogo-corpo { padding: 1rem; gap: 1rem; }
+  .filtros { padding: 1rem; }
+  .produtos-barra { flex-direction: column; }
+  .busca-wrap { height: 40px; }
+  .ordenar-select { width: 100%; height: 40px; }
+}

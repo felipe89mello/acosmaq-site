@@ -281,3 +281,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Celular — orçamento */
+@media (max-width: 600px) {
+  .orcamento-secao { padding: 1.5rem 1rem; }
+  .orcamento-box { padding: 1.25rem; }
+  .quote-left h2 { font-size: 18px; }
+}
