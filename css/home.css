@@ -793,10 +793,8 @@
   .rodape-topo { grid-template-columns: 1fr; }
   .rodape-fundo { flex-direction: column; text-align: center; }
 
-  /* Topbar no celular — esconde email e localização, mantém só o telefone */
-  .topbar-inner { flex-direction: column; gap: 4px; padding: 6px 1rem; }
-  .topbar-info span:nth-child(2),
-  .topbar-info span:nth-child(3) { display: none; }
+  /* Esconde a topbar inteira no celular */
+  .topbar { display: none; }
 
   /* Navbar ocupa largura total */
   .navbar { padding: 0 1rem; }
